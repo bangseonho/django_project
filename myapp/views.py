@@ -7,8 +7,8 @@ import json
 
 def index(request):
 	if request.method == 'GET':
-		client_id = "9dzy3DDrzUBJE7yPrRss"
-		client_secret = "XlQtL4lsv8"
+		client_id = ""
+		client_secret = ""
 		#search_lang = input("검색할 단어를 입력하세요. : ")
 		encText = urllib.parse.quote("어벤져스")
 		url = "https://openapi.naver.com/v1/search/movie?query=" + encText # json 결과
