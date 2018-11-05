@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/myapp.css' %}">
+
+<h1><strong>방선호</strong></h1>
+
+<form>
+	<center>
+		<input type="text">
+		<button type="submit">검색</button>
+	</center>
+</form>
+
+<hr />
+	<table>
+		<thead>
+			<tr>
+				<th>이미지</th><th>제목</th><th>출연자</th>
+			</tr>
+		</thead>
+{% for item in items %}
+		<tbody>
+			<tr>
+				<th><img src="{{item.image}}"></th><th>{{item.title}}</th><th>{{item.actor}}
+			</tr>
+		</tbody>
+{% endfor %}
+	</table>
+			<!-- <img src="{{item.image}}"> {{item.title}} : {{item.actor}} -->
