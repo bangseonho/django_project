@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/myapp.css' %}">
+
+<div class="container">
+	<h1><strong>방선호</strong></h1>
+
+	<form action="/index" method="GET">
+		<input id="value" name="value" type="text">
+		<button type="submit">검색</button>
+	</form>
+</div>
+<hr />

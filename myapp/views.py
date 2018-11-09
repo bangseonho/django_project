@@ -5,12 +5,15 @@ import json
 
 # Create your views here.
 
+def home(request):
+	return render(request, 'search/home.html')
+
 def index(request):
 	if request.method == 'GET':
 		client_id = ""
 		client_secret = ""
-		#search_lang = input("검색할 단어를 입력하세요. : ")
-		encText = urllib.parse.quote("어벤져스")
+		search_word = request.GET.get('value')
+		encText = urllib.parse.quote(search_word.encode('utf-8'))
 		url = "https://openapi.naver.com/v1/search/movie?query=" + encText # json 결과
 		# url = "https://openapi.naver.com/v1/search/blog.xml?query=" + encText # xml 결과
 		movie_request = urllib.request.Request(url)
@@ -28,3 +31,4 @@ def index(request):
 		    return render(request, 'search/search.html', context)
 		else:
 		    print("Error Code:" + rescode)
+
